@@ -8,6 +8,12 @@ body {
     color: #444;
 }
 
+a {
+    text-decoration: none;
+    color: #444;
+    font-weight: bold;
+}
+
 .title {
     font-size: 30px;
     font-weight: bold;
@@ -29,6 +35,7 @@ body {
 
 .block {
     margin: 100px auto;
+    margin-bottom: 0;
 }
 
 .block-content {
@@ -68,6 +75,10 @@ ul {
     cursor: default;
 }
 
+.cursor-pointer {
+    cursor: pointer;
+}
+
 .container {
     text-align: center;
     overflow: hidden;
@@ -78,11 +89,29 @@ ul {
     width: 100%;
     opacity: .2;
     position: fixed;
+    pointer-events: none;
 }
 
 .fade-out {
     animation-name: fade-out;
     animation-duration: 3s;
+}
+
+.contacts {
+    text-align: center;
+    margin: 40px auto;
+}
+
+.contact{
+    margin: 0 5px;
+}
+
+.contact:hover {
+    transition: all .5s;
+    color: #eee;
+    background: linear-gradient(#444 80%, transparent 80%);
+    background-size: 500% 500%;
+    animation: slide-back 1s ease;
 }
 
 @keyframes fade-out {
@@ -91,5 +120,14 @@ ul {
     }
     100% {
         opacity: .2;
+    }
+}
+
+@keyframes slide-back {
+    0% {
+        background-position: 50% 100%
+    }
+    100% {
+        background-position: 50% 0%
     }
 }
